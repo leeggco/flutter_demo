@@ -4,7 +4,7 @@ import 'model/post.dart';
 void main() => runApp(App());
 
 class App extends StatelessWidget {
-  // @override 指的是覆盖夫类的build方法
+  // @override 指的是覆盖父类的build方法
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
