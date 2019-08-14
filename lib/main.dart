@@ -6,6 +6,8 @@ import './demo/basicDemo.dart';
 import './demo/buttonNavigationBarDemo.dart';
 import './demo/layoutDemo.dart';
 import './demo/viewDemo.dart';
+import './demo/sliverDemo.dart';
+import './demo/NavigatorDemo.dart';
 
 void main() => runApp(App());
 
@@ -15,7 +17,15 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // home: NavigatorDemo(),
       home: Home(),
+      // home: SliverDemo(),
+      // 初始路由
+      initialRoute: '/',
+      routes: {
+        // '/': (context) => NavigatorDemo(),
+        '/about': (context) => Page(title: 'About'),
+      },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
@@ -26,12 +36,10 @@ class App extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
@@ -59,6 +67,7 @@ class Home extends StatelessWidget {
               Tab(icon: Icon(Icons.change_history)),
               Tab(icon: Icon(Icons.directions_bike)),
               Tab(icon: Icon(Icons.view_quilt)),
+              Tab(icon: Icon(Icons.view_agenda)),
             ],
           ),
         ),
@@ -68,6 +77,7 @@ class Home extends StatelessWidget {
             BasicDemo(),
             LayoutDemo(),
             ViewDemo(),
+            SliverDemo()
           ],
         ),
         drawer: DrawerDemo(),
