@@ -9,6 +9,7 @@ import './demo/viewDemo.dart';
 import './demo/sliverDemo.dart';
 import './demo/navigatorDemo.dart';
 import './demo/formDemo.dart';
+import './demo/materialComponentsDemo.dart';
 
 void main() => runApp(App());
 
@@ -22,11 +23,12 @@ class App extends StatelessWidget {
       home: Home(),
       // home: SliverDemo(),
       // 初始路由
-      initialRoute: '/form',
+      initialRoute: '/mdc',
       routes: {
         // '/': (context) => NavigatorDemo(),
         '/about': (context) => Page(title: 'About'),
         '/form': (context) => FormDemo(),
+        '/mdc': (context) => MaterialComponents()
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
