@@ -7,7 +7,8 @@ import './demo/buttonNavigationBarDemo.dart';
 import './demo/layoutDemo.dart';
 import './demo/viewDemo.dart';
 import './demo/sliverDemo.dart';
-import './demo/NavigatorDemo.dart';
+import './demo/navigatorDemo.dart';
+import './demo/formDemo.dart';
 
 void main() => runApp(App());
 
@@ -21,15 +22,17 @@ class App extends StatelessWidget {
       home: Home(),
       // home: SliverDemo(),
       // 初始路由
-      initialRoute: '/',
+      initialRoute: '/form',
       routes: {
         // '/': (context) => NavigatorDemo(),
         '/about': (context) => Page(title: 'About'),
+        '/form': (context) => FormDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-        splashColor: Colors.white24
+        splashColor: Colors.white24,
+        accentColor: Colors.lightBlue,
       ),
     );
   }
