@@ -11,6 +11,7 @@ import './demo/navigatorDemo.dart';
 import './demo/formDemo.dart';
 import './demo/materialComponentsDemo.dart';
 import './demo/state/stateManagementDemo.dart';
+import './demo/sound/basicDemo.dart';
 
 void main() => runApp(App());
 
@@ -24,13 +25,14 @@ class App extends StatelessWidget {
       home: Home(),
       // home: SliverDemo(),
       // 初始路由
-      initialRoute: '/state',
+      initialRoute: '/sound',
       routes: {
-        // '/': (context) => NavigatorDemo(),
+        // '/': (context) => Hello(),
         '/about': (context) => Page(title: 'About'),
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
         '/state': (context) => StateManagementDemo(),
+        '/sound': (context) => VideoScreen(url: 'rtmp://play.leeggco.com/live/33')
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
