@@ -24,7 +24,7 @@ class _VideoScreenState extends State<VideoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Fijkplayer Example")),
+        appBar: AppBar(title: Text("Sound hole")),
         body: Container(
           alignment: Alignment.center,
           child: FijkView(
