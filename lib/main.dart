@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import './demo/listViewDemo.dart';
 import './demo/helloDemo.dart';
 import './demo/drawerDemo.dart';
@@ -14,8 +15,21 @@ import './demo/state/stateManagementDemo.dart';
 import './demo/sound/basicDemo.dart';
 
 void main() => runApp(App());
+var url = 'http://example.com/whatsit/create';
 
 class App extends StatelessWidget {
+  // 登陆账号
+  doLogin() async {
+    const url = 'http://xxxxxxx.com/login';
+    var response = await http.post(url, body: {'username': 'leeggco', 'password': '12345'});
+    print('Response body: ${response}');
+  }
+  // 获取播放流url
+  getPushUrl() async {
+    const url = 'http://xxxxxxx.com/flow/getPushUrl';
+    var response = await http.post(url, body: {'username': 'doodle'});
+    print('Response body: ${response}');
+  }
   // @override 指的是覆盖夫类的build方法
   @override
   Widget build(BuildContext context) {
