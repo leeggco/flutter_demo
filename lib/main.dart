@@ -73,10 +73,10 @@ class Home extends StatelessWidget {
           // ),
           actions: <Widget>[
             IconButton(
-            icon: Icon(Icons.search),
-            tooltip: 'search',
-            onPressed: () => debugPrint('search is pressed.'),
-          )
+              icon: Icon(Icons.search),
+              tooltip: 'search',
+              onPressed: () => debugPrint('search is pressed.'),
+            )
           ],
           title: Text('NINGHAO'),
           elevation: 0.0,
