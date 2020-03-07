@@ -39,7 +39,7 @@ class App extends StatelessWidget {
       home: Home(),
       // home: SliverDemo(),
       // 初始路由
-      initialRoute: '/sound',
+      initialRoute: '/form',
       routes: {
         // '/': (context) => Hello(),
         '/about': (context) => Page(title: 'About'),
