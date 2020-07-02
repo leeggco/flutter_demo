@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+
 import './demo/listViewDemo.dart';
 import './demo/helloDemo.dart';
 import './demo/drawerDemo.dart';
@@ -14,22 +14,13 @@ import './demo/materialComponentsDemo.dart';
 import './demo/state/stateManagementDemo.dart';
 import './demo/sound/basicDemo.dart';
 
-void main() => runApp(App());
-var url = 'http://example.com/whatsit/create';
+void main() {
+  runApp(App());
+}
+
 
 class App extends StatelessWidget {
-  // 登陆账号
-  doLogin() async {
-    const url = 'http://xxxxxxx.com/login';
-    var response = await http.post(url, body: {'username': 'leeggco', 'password': '12345'});
-    print('Response body: ${response}');
-  }
-  // 获取播放流url
-  getPushUrl() async {
-    const url = 'http://xxxxxxx.com/flow/getPushUrl';
-    var response = await http.post(url, body: {'username': 'doodle'});
-    print('Response body: ${response}');
-  }
+  // doLogin();
   // @override 指的是覆盖夫类的build方法
   @override
   Widget build(BuildContext context) {
@@ -42,11 +33,10 @@ class App extends StatelessWidget {
       initialRoute: '/sound',
       routes: {
         // '/': (context) => Hello(),
-        '/about': (context) => Page(title: 'About'),
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
         '/state': (context) => StateManagementDemo(),
-        '/sound': (context) => VideoScreen(url: 'rtmp://play.leeggco.com/live/33')
+        '/sound': (context) => VideoScreen()
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
@@ -109,4 +99,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
